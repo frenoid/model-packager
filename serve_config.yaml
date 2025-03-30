@@ -4,6 +4,12 @@ http_options:
   host: 0.0.0.0
   port: 8000
 
+logging_config:
+  encoding: TEXT
+  log_level: INFO
+  logs_dir: null
+  enable_access_log: true
+
 applications:
 - name: AppleDemandPredictor
   route_prefix: /
@@ -23,5 +29,3 @@ applications:
   deployments:
   - name: PredictApplesDemand
     num_replicas: 1
-    user_config:
-      language: french
