@@ -15,6 +15,7 @@ applications:
   route_prefix: /
   import_path: apple-predict:app
   runtime_env:
+    working_dir: "https://github.com/ray-project/serve_config_examples/archive/36862c251615e258a58285934c7c41cffd1ee3b7.zip"
     pip:
     - mlflow==2.20.3
     - numpy==1.26.4
