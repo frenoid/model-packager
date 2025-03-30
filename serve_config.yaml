@@ -29,6 +29,6 @@ applications:
       MLFLOW_TRACKING_PASSWORD: mlflow
   deployments:
   - name: PredictApplesDemand
-    num_replicas: 1
+    num_replicas: 2
     ray_actor_options:
       num_cpus: 1.0

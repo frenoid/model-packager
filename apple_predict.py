@@ -30,7 +30,7 @@ class PredictApplesDemand:
 
         inference = self.model.predict(batch_dmatrix)
         
-        print(float(inference[0]))
+        print(f"Predicted apple demand: {float(inference[0])}")
 
         # Make a copy of the original dataframe
         #infer_df = df.copy()
