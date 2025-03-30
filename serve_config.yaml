@@ -1,0 +1,27 @@
+proxy_location: EveryNode
+
+http_options:
+  host: 0.0.0.0
+  port: 8000
+
+applications:
+- name: AppleDemandPredictor
+  route_prefix: /
+  import_path: apple-predict:app
+  runtime_env:
+    pip:
+    - mlflow==2.20.3
+    - numpy==1.26.4
+    - pandas==2.2.3
+    - scikit-learn==1.2.2
+    - scipy==1.11.4
+    - xgboost==3.0.0
+    env_vars:
+      MLFLOW_TRACKING_URI: http://mlflow.mlnow.frenoid.com:30080/
+      MLFLOW_TRACKING_USERNAME: mlflow
+      MLFLOW_TRACKING_PASSWORD: mlflow
+  deployments:
+  - name: PredictApplesDemand
+    num_replicas: 1
+    user_config:
+      language: french
